@@ -1,0 +1,77 @@
+# ----------------------------
+# Node.js
+# ----------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ----------------------------
+# Environment Variables
+# ----------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ----------------------------
+# Logs
+# ----------------------------
+logs
+*.log
+*.log.*
+/pids
+*.pid
+*.seed
+*.pid.lock
+
+# ----------------------------
+# Build / Output
+# ----------------------------
+dist/
+build/
+.cache/
+.next/
+out/
+.tmp/
+
+# ----------------------------
+# OS / IDE Files
+# ----------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ----------------------------
+# Coverage / Testing
+# ----------------------------
+coverage/
+.nyc_output/
+
+# ----------------------------
+# React specific
+# ----------------------------
+# Production build
+client/build/
+
+# Local testing
+*.local
+
+# ----------------------------
+# Backend specific
+# ----------------------------
+# Debug files
+*.tgz
+
+# ----------------------------
+# Misc
+# ----------------------------
+*.bak
+*.orig
