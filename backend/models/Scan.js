@@ -7,7 +7,7 @@ const scanSchema = new mongoose.Schema({
   },
   type: {
     type: String,
-    enum: ['ip', 'domain', 'url', 'hash'],
+    enum: ['ip', 'domain', 'url', 'hash', 'unknown'], // Added 'unknown' as valid type
     required: true,
   },
   threatScore: {
