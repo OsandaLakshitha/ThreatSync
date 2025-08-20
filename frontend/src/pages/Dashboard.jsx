@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiShield, FiAlertTriangle, FiSearch, FiActivity } from 'react-icons/fi';
+import { FiShield, FiAlertTriangle, FiSearch, FiActivity, FiLogOut } from 'react-icons/fi';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import StatsCard from '../components/StatsCard';
 import ScanInput from '../components/ScanInput';
 import RecentScans from '../components/RecentScans';
+import { useAuth } from '../contexts/AuthContext';
 
 const Dashboard = () => {
   const [stats, setStats] = useState({
@@ -15,6 +16,7 @@ const Dashboard = () => {
     highThreats: 0,
   });
   const [loading, setLoading] = useState(true);
+  const { logout, user } = useAuth();
 
   useEffect(() => {
     fetchStats();
@@ -37,6 +39,39 @@ const Dashboard = () => {
 
   return (
     <div className="p-8">
+      {/* Logout Button */}
+      <div style={{ 
+        position: 'absolute', 
+        top: '2rem', 
+        right: '2rem' 
+      }}>
+        <button
+          onClick={logout}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            padding: '0.75rem 1.5rem',
+            backgroundColor: '#ff0041',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '0.5rem',
+            cursor: 'pointer'
+          }}
+        >
+          <FiLogOut style={{ marginRight: '0.5rem' }} />
+          Logout
+        </button>
+      </div>
+
+      {/* Welcome Message */}
+      <div style={{ 
+        marginBottom: '1rem',
+        color: '#00ff41'
+      }}>
+        Welcome, {user?.username}
+      </div>
+
+      {/* Rest of your existing dashboard code... */}
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
